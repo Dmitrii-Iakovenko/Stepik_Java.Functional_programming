@@ -4,7 +4,7 @@ import java.util.stream.Stream;
 
 // 4.5 Bad words detecting
 // https://stepik.org/lesson/35217/step/1?unit=14575
-public class Solution_14575_1 {
+public class Solution_4_5 {
 
     public static void main(String[] args) {
         String text = "1 2 3 4 5 6 7 1 1 1 1 1";
