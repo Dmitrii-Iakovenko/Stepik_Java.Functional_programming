@@ -6,13 +6,15 @@ import java.util.stream.Collectors;
 public class Solution_5_3 {
     public static void main(String[] args) {
 
-        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
-        // 1*1 * 2*2 * 3*3 * 4*4 * 5*5 * 6*6 = 518_400
+        List<Integer> numbers = List.of(1, 2, 3, 4, 9,99,121);
+        // if bad convert Integer to Long, to have -884063168
+        // right solution: 6694969951296
 
         long val = numbers.stream()
                 //.map(a -> a * a)
                 //.reduce(1, (a, b) -> a * b);
-                .collect(Collectors.reducing(1, a->a*a, (a, b)-> a*b));
+                //.collect(Collectors.reducing(1, a->a*a, (a, b)-> a*b));
+                .collect(Collectors.reducing(1L, Integer::longValue, (a, b) -> a*b*b));
 
         System.out.println(val);
 
